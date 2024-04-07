@@ -3,7 +3,7 @@
      const appSettings = {
        databaseURL: "https://vnvrkarthik0-default-rtdb.asia-southeast1.firebasedatabase.app/"
      }
-     
+     var sname = prompt("Enter your name");
      const app = initializeApp(appSettings)
      const database = getDatabase(app)
      const users = ref(database)
@@ -81,8 +81,7 @@ var sentTime,h,d,min,sec;
      let text= $("#inp").val()
      
      if(text!=" "){
-     push(users,sentTime+":     " + text)
-
+     push(users,"("+sentTime+")" + sname+" :     " + text)
       
      
      console.log(text)
