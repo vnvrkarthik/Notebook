@@ -82,6 +82,7 @@ var sentTime,h,d,min,sec;
      let text= $("#inp").val()
      
      if(text!=" "){
+      sname =    sname? sname:"Anonymous "
      push(users,"("+sentTime+")" + sname+" :     " + text)
       
      
