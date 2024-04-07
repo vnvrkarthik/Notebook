@@ -10,11 +10,12 @@
      var time =1
 var sentTime,h,d,min,sec;
      onValue(users, snapshot=>{
+      
        $("#refresh").empty()
        $("#inp").val(" ")
        let itemsArray = Object.entries(snapshot.val())
        
-       
+       window.navigator.vibrate(50)
        
        for(let i =0; i< itemsArray.length;i++){
          
@@ -38,7 +39,7 @@ var sentTime,h,d,min,sec;
        
          vals.dblclick(()=>{
            valdiv.hide(500)
-           window.navigator.vibrate(50)
+           
            setTimeout(()=>{
              let exactLocation = ref(database,storyId)
            remove(exactLocation)
@@ -48,7 +49,7 @@ var sentTime,h,d,min,sec;
          })
          valsvg.click(()=>{
           valdiv.hide(500)
-          window.navigator.vibrate(50)
+          
            setTimeout(()=>{
              let exactLocation = ref(database,storyId)
            remove(exactLocation)
@@ -56,7 +57,7 @@ var sentTime,h,d,min,sec;
            },1000)
          })
          valdiv.append(vals)
-         valdiv.append(valsvg)
+     //    valdiv.append(valsvg)
          
          if(time==1){
          valdiv.hide()
