@@ -8,6 +8,7 @@
      const database = getDatabase(app)
      const users = ref(database)
      var time =1
+var sentTime,h,d,min,sec;
      onValue(users, snapshot=>{
        $("#refresh").empty()
        $("#inp").val(" ")
@@ -72,12 +73,18 @@
      }
      
      $("#leo").click(()=>{
-       
+            d = new Date()
+      h = d.getHours()
+      min = d.getMinutes()
+     sec = d.getSeconds()
+  sentTime =   h+':'+min+':'+sec
      let text= $("#inp").val()
-     window.navigator.vibrate(20)
+     
      if(text!=" "){
-     push(users,text)
+     push(users,sentTime+":     " + text)
 
+      
+     
      console.log(text)
      }else{
        alert("fill")
